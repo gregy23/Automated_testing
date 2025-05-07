@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-05-06T13:49:23.926243" rpa="false" schemaversion="5">
+<suite id="s1" name="Account Edit" source="C:\Users\macunanan\Desktop\automation_testing\test_scripts\account_edit.robot">
+<test id="s1-t1" name="edit account end to end test" line="7">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-05-06T13:49:24.289713" level="INFO">Opening browser 'edge' to base url 'https://sysdevintegral360dev.sscgi.com/'.</msg>
+<arg>${URL}</arg>
+<arg>edge</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-05-06T13:49:24.289445" elapsed="47.697804"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<msg time="2025-05-06T13:50:12.009552" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=136.0.3240.50)
+Stacktrace:
+	GetHandleVerifier [0x00007FF75D8002E5+25029]
+	(No symbol) [0x00007FF75D7552F0]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75DA7D73A+1947706]
+	(No symbol) [0x00007FF75D50C28F]
+	(No symbol) [0x00007FF75D59EAE0]
+	(No symbol) [0x00007FF75D5B609A]
+	(No symbol) [0x00007FF75D598DF3]
+	(No symbol) [0x00007FF75D56D6A6]
+	(No symbol) [0x00007FF75D56CBB3]
+	(No symbol) [0x00007FF75D56D4D3]
+	(No symbol) [0x00007FF75D66638D]
+	(No symbol) [0x00007FF75D673F2F]
+	(No symbol) [0x00007FF75D66C91F]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75D8E76EA+284650]
+	(No symbol) [0x00007FF75D762C81]
+	(No symbol) [0x00007FF75D75B724]
+	(No symbol) [0x00007FF75D75B873]
+	(No symbol) [0x00007FF75D74D4B6]
+	BaseThreadInitThunk [0x00007FF8FB297374+20]
+	RtlUserThreadStart [0x00007FF8FBEBCC91+33]
+</msg>
+<msg time="2025-05-06T13:50:12.025795" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=136.0.3240.50)
+Stacktrace:
+	GetHandleVerifier [0x00007FF75D8002E5+25029]
+	(No symbol) [0x00007FF75D7552F0]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75DA7D73A+1947706]
+	(No symbol) [0x00007FF75D50C28F]
+	(No symbol) [0x00007FF75D59EAE0]
+	(No symbol) [0x00007FF75D5B609A]
+	(No symbol) [0x00007FF75D598DF3]
+	(No symbol) [0x00007FF75D56D6A6]
+	(No symbol) [0x00007FF75D56CBB3]
+	(No symbol) [0x00007FF75D56D4D3]
+	(No symbol) [0x00007FF75D66638D]
+	(No symbol) [0x00007FF75D673F2F]
+	(No symbol) [0x00007FF75D66C91F]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75D8E76EA+284650]
+	(No symbol) [0x00007FF75D762C81]
+	(No symbol) [0x00007FF75D75B724]
+	(No symbol) [0x00007FF75D75B873]
+	(No symbol) [0x00007FF75D74D4B6]
+	BaseThreadInitThunk [0x00007FF8FB297374+20]
+	RtlUserThreadStart [0x00007FF8FBEBCC91+33]
+</msg>
+<doc>Maximizes current browser window.</doc>
+<status status="FAIL" start="2025-05-06T13:50:11.991011" elapsed="0.041145">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=136.0.3240.50)
+Stacktrace:
+	GetHandleVerifier [0x00007FF75D8002E5+25029]
+	(No symbol) [0x00007FF75D7552F0]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75DA7D73A+1947706]
+	(No symbol) [0x00007FF75D50C28F]
+	(No symbol) [0x00007FF75D59EAE0]
+	(No symbol) [0x00007FF75D5B609A]
+	(No symbol) [0x00007FF75D598DF3]
+	(No symbol) [0x00007FF75D56D6A6]
+	(No symbol) [0x00007FF75D56CBB3]
+	(No symbol) [0x00007FF75D56D4D3]
+	(No symbol) [0x00007FF75D66638D]
+	(No symbol) [0x00007FF75D673F2F]
+	(No symbol) [0x00007FF75D66C91F]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75D8E76EA+284650]
+	(No symbol) [0x00007FF75D762C81]
+	(No symbol) [0x00007FF75D75B724]
+	(No symbol) [0x00007FF75D75B873]
+	(No symbol) [0x00007FF75D74D4B6]
+	BaseThreadInitThunk [0x00007FF8FB297374+20]
+	RtlUserThreadStart [0x00007FF8FBEBCC91+33]
+</status>
+</kw>
+<kw name="Login To System" owner="keywords">
+<status status="NOT RUN" start="2025-05-06T13:50:12.032836" elapsed="0.000080"/>
+</kw>
+<kw name="Navigate To edit module" owner="keywords">
+<status status="NOT RUN" start="2025-05-06T13:50:12.033767" elapsed="0.000089"/>
+</kw>
+<kw name="searching for account" owner="keywords">
+<status status="NOT RUN" start="2025-05-06T13:50:12.037284" elapsed="0.000116"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>55s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2025-05-06T13:50:12.038167" elapsed="0.000106"/>
+</kw>
+<kw name="Close The Browser" owner="keywords">
+<status status="NOT RUN" start="2025-05-06T13:50:12.040186" elapsed="0.000115"/>
+</kw>
+<doc>Full workflow to create an employee in the system.</doc>
+<status status="FAIL" start="2025-05-06T13:49:24.288287" elapsed="47.752563">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=136.0.3240.50)
+Stacktrace:
+	GetHandleVerifier [0x00007FF75D8002E5+25029]
+	(No symbol) [0x00007FF75D7552F0]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75DA7D73A+1947706]
+	(No symbol) [0x00007FF75D50C28F]
+	(No symbol) [0x00007FF75D59EAE0]
+	(No symbol) [0x00007FF75D5B609A]
+	(No symbol) [0x00007FF75D598DF3]
+	(No symbol) [0x00007FF75D56D6A6]
+	(No symbol) [0x00007FF75D56CBB3]
+	(No symbol) [0x00007FF75D56D4D3]
+	(No symbol) [0x00007FF75D66638D]
+	(No symbol) [0x00007FF75D673F2F]
+	(No symbol) [0x00007FF75D66C91F]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75D8E76EA+284650]
+	(No symbol) [0x00007FF75D762C81]
+	(No symbol) [0x00007FF75D75B724]
+	(No symbol) [0x00007FF75D75B873]
+	(No symbol) [0x00007FF75D74D4B6]
+	BaseThreadInitThunk [0x00007FF8FB297374+20]
+	RtlUserThreadStart [0x00007FF8FBEBCC91+33]
+</status>
+</test>
+<status status="FAIL" start="2025-05-06T13:49:23.928283" elapsed="48.132235"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Account Edit" id="s1" pass="0" fail="1" skip="0">Account Edit</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2025-05-06T13:50:12.009552" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: MicrosoftEdge=136.0.3240.50)
+Stacktrace:
+	GetHandleVerifier [0x00007FF75D8002E5+25029]
+	(No symbol) [0x00007FF75D7552F0]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75DA7D73A+1947706]
+	(No symbol) [0x00007FF75D50C28F]
+	(No symbol) [0x00007FF75D59EAE0]
+	(No symbol) [0x00007FF75D5B609A]
+	(No symbol) [0x00007FF75D598DF3]
+	(No symbol) [0x00007FF75D56D6A6]
+	(No symbol) [0x00007FF75D56CBB3]
+	(No symbol) [0x00007FF75D56D4D3]
+	(No symbol) [0x00007FF75D66638D]
+	(No symbol) [0x00007FF75D673F2F]
+	(No symbol) [0x00007FF75D66C91F]
+	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75D8E76EA+284650]
+	(No symbol) [0x00007FF75D762C81]
+	(No symbol) [0x00007FF75D75B724]
+	(No symbol) [0x00007FF75D75B873]
+	(No symbol) [0x00007FF75D74D4B6]
+	BaseThreadInitThunk [0x00007FF8FB297374+20]
+	RtlUserThreadStart [0x00007FF8FBEBCC91+33]
+</msg>
+</errors>
+</robot>

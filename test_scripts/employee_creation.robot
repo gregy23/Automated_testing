@@ -1,0 +1,19 @@
+*** Settings ***
+Library    SeleniumLibrary
+Resource   resources/variables.robot
+Resource   resources/keywords.robot
+
+*** Test Cases ***
+Create employee end to end test
+    [Documentation]    Full workflow to create an employee in the system.
+    
+    Open Browser    ${URL}    edge
+    Maximize Browser Window
+    Login To System
+    Navigate To Employee Management
+    clicking add icon from employee Index
+    fill up the madatory inpormation
+    scroll down
+    Submit Employee Form
+    Sleep    10s
+    Close The Browser
