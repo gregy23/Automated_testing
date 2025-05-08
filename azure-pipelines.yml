@@ -49,13 +49,13 @@ steps:
   displayName: 'Verify Test Directory'
 
 
-# 4. Run Robot Framework tests
+# 5. Run Robot Framework tests
 - script: |
     robot --variable BROWSER:edge ^
           --output "$(ROBOT_REPORTS_DIR)\output.xml" ^
           --log "$(ROBOT_REPORTS_DIR)\log.html" ^
           --report "$(ROBOT_REPORTS_DIR)\report.html" ^
-          robot_test/
+          test_scripts/
   displayName: 'Run Robot Framework Tests'
   continueOnError: true
 
