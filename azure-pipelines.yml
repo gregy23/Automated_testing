@@ -37,15 +37,27 @@ steps:
     pip install robotframework-seleniumlibrary==6.1.2 || exit 1
   displayName: 'Install Robot Framework and dependencies'
 
-# 4. Run Robot Framework tests
+# 4. Verify Directory and List Contents
+- script: |
+    if exist "test_scripts" (
+        echo "Directory exists."
+        dir "test_scripts"
+    ) else (
+        echo "ERROR: Directory 'test_scripts' not found!"
+        exit 1
+    )
+  displayName: 'Verify Test Directory'
+
+
+# 5. Run Robot Framework tests
 - script: |
     robot --variable BROWSER:edge ^
           --output "$(ROBOT_REPORTS_DIR)\output.xml" ^
           --log "$(ROBOT_REPORTS_DIR)\log.html" ^
           --report "$(ROBOT_REPORTS_DIR)\report.html" ^
-          robot_test/
+          test_scripts/
   displayName: 'Run Robot Framework Tests'
-  continueOnError: true  # Continue even if tests fail
+  continueOnError: true
 
 # 5. Convert Robot Output to JUnit
 - script: |
@@ -68,27 +80,79 @@ steps:
     artifactName: 'RobotResults'
   condition: always()
 
-# 8. Rollback if regression tests fail
+# 8. Get second latest successful build ID dynamically
+- powershell: |
+    $organization = "AutomatedTestingSSCGI"
+    $project = "AutomatedTesting"
+    $pipelineId = "$(resources.pipeline.AutomatedTestingPipeline.pipelineID)"
+    $pat = "$(System.AccessToken)"
+
+    $uri = "https://dev.azure.com/$organization/$project/_apis/build/builds?definitions=$pipelineId&resultFilter=succeeded&queryOrder=finishTimeDescending&`$top=2&api-version=7.0"
+
+    $response = Invoke-RestMethod -Uri $uri -Headers @{
+      Authorization = "Bearer $pat"
+    } -Method Get
+
+    if ($response.count -ge 2) {
+      $buildId = $response.value[1].id
+      Write-Host "Found second latest successful build ID: $buildId"
+      Write-Host "##vso[task.setvariable variable=PREVIOUS_SUCCESS_BUILD_ID]$buildId"
+    } else {
+      Write-Error "Not enough successful builds found."
+      exit 1
+    }
+  env:
+    System.AccessToken: $(System.AccessToken)
+  displayName: 'Get Second Previous Successful Build ID'
+  condition: failed()
+
+# 9. Download the previous successful artifact
 - task: DownloadPipelineArtifact@2
   inputs:
     buildType: 'specific'
-    project: 'AutomatedTesting'  # Replace with your project name
-    pipeline: 'AutomatedTesting-.NET Desktop-CI'  # The name of your system pipeline
-    buildVersionToDownload: 'latestFromBranch'  # Get the latest successful build
-    branchName: 'refs/heads/main'  # Replace with your branch name
-    artifactName: 'drop'  # Artifact name
-    targetPath: '$(Build.ArtifactStagingDirectory)/rollback'  # Save artifact here
+    project: 'AutomatedTesting'
+    pipeline: 'AutomatedTesting-.NET Desktop-CI'
+    buildVersionToDownload: 'specific'
+    specificBuildWithTriggering: false
+    buildId: '$(PREVIOUS_SUCCESS_BUILD_ID)'
+    artifactName: 'drop'
+    targetPath: '$(Build.ArtifactStagingDirectory)/rollback'
   displayName: 'Download Previous Successful Artifact'
-  condition: failed()  # Only run on failure
+  condition: failed()
+  continueOnError: true
 
-- script: |
-    echo "Re-deploying the previous stable build..."
-    xcopy "$(Build.ArtifactStagingDirectory)/rollback/*" "C:\YourDeploymentFolder" /E /Y  # Replace with your deployment folder
-  displayName: 'Re-deploy Previous Artifact'
-  condition: failed()  # Only run on failure
+# 10. Inspect rollback artifact contents
+- powershell: |
+    Write-Host "Checking contents of rollback folder:"
+    Get-ChildItem -Recurse "$(Build.ArtifactStagingDirectory)\rollback"
+  displayName: 'Inspect Rollback Artifact'
+  condition: failed()
 
-- script: |
-    echo "Verifying files in deployment directory..."
-    dir "C:\YourDeploymentFolder"  # Replace with your deployment folder path
+# 11. Conditional redeploy with safe folder creation
+- powershell: |
+    $deployPath = "C:\YourDeploymentFolder"
+    if (!(Test-Path $deployPath)) {
+      New-Item -ItemType Directory -Force -Path $deployPath
+    }
+
+    if (Test-Path "$(Build.ArtifactStagingDirectory)\rollback") {
+      Write-Host "Rollback artifact found. Re-deploying the previous stable build..."
+      xcopy "$(Build.ArtifactStagingDirectory)\rollback\*" "$deployPath" /E /Y /I
+    } else {
+      Write-Warning "No rollback artifact found. Skipping deployment."
+    }
+  displayName: 'Conditional Redeploy of Previous Artifact'
+  condition: failed()
+
+# 12. Verify rollback folder contents
+- powershell: |
+    $path = "C:\YourDeploymentFolder"
+    if (Test-Path $path) {
+      Write-Host "Verifying files in deployment directory..."
+      Get-ChildItem -Recurse $path
+    } else {
+      Write-Warning "Deployment folder does not exist."
+      exit 1
+    }
   displayName: 'Verify Rollback Files'
-  condition: failed()  # Only run on failure
+  condition: failed()
