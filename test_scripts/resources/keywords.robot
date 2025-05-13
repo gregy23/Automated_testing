@@ -1,6 +1,8 @@
 *** Settings ***
 Library    SeleniumLibrary
 
+
+
 *** Keywords ***
 Login To System
     Input Text         id=UserName          ${USERNAME}
@@ -173,9 +175,9 @@ input UserName
 
 searching for account
     Wait Until Element Is Visible     xpath=//input[@id='txtbxsearchField']
-    Input Text    xpath=//input[@id='txtbxsearchField']    ${USERNAM2}
+    Input Text    xpath=//input[@id='txtbxsearchField']      ${USERNAME2}
     
-
+    
 
 Navigate To edit module
     Wait Until Page Contains Element    xpath=//*[@id="UserManagement"]/span/span[1]
@@ -187,6 +189,40 @@ Navigate To edit module
     Click Element    xpath=//span[text()='USER ACCOUNT']    
 
 
+click search icon for edit module
+    Wait Until Element Is Visible    //input[@id='searchField']    20s
+    Click Element                    //input[@id='searchField']
+
+click edit icon
+    Wait Until Element Is Visible   xpath=//input[@id='editModule']    timeout=10s
+    Wait Until Element Is Enabled    xpath=//input[@id='editModule']    timeout=10s
+    Scroll Element Into View         xpath=//input[@id='editModule']
+    Click Element                    xpath=//input[@id='editModule']
+
+edit user account
+    Wait Until Element Is Visible    //input[@id='UserID' and @name='UserID' and @type='text' and @value='admin5']
+    Input Text    //input[@id='UserID' and @name='UserID' and @type='text' and @value='admin5']  ${USERNAME2}
+
+
+click save button for ACCOUNT
+    Wait Until Element Is Visible    //input[@id='btnSubmit']
+    Click Button    //input[@id='btnSubmit']
+
+create account
+    Open Browser    ${URL}    edge
+    Maximize Browser Window
+    Login To System
+    Navigate To Employee Management
+    clicking add icon from employee Index
+    fill up the madatory inpormation
+    scroll down
+    click save button
+    click save and Process
+    click procces to create User
+    select role
+    input UserName
+    scroll down
+    Close The Browser
 
 
 Close The Browser

@@ -1,173 +1,209 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-05-06T13:49:23.926243" rpa="false" schemaversion="5">
+<robot generator="Robot 7.2.2 (Python 3.13.2 on win32)" generated="2025-05-13T16:55:44.201553" rpa="false" schemaversion="5">
 <suite id="s1" name="Account Edit" source="C:\Users\macunanan\Desktop\automation_testing\test_scripts\account_edit.robot">
 <test id="s1-t1" name="edit account end to end test" line="7">
 <kw name="Open Browser" owner="SeleniumLibrary">
-<msg time="2025-05-06T13:49:24.289713" level="INFO">Opening browser 'edge' to base url 'https://sysdevintegral360dev.sscgi.com/'.</msg>
+<msg time="2025-05-13T16:55:44.595545" level="INFO">Opening browser 'edge' to base url 'https://sysdevintegral360dev.sscgi.com/'.</msg>
 <arg>${URL}</arg>
 <arg>edge</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<status status="PASS" start="2025-05-06T13:49:24.289445" elapsed="47.697804"/>
+<status status="PASS" start="2025-05-13T16:55:44.595250" elapsed="5.291741"/>
 </kw>
 <kw name="Maximize Browser Window" owner="SeleniumLibrary">
-<msg time="2025-05-06T13:50:12.009552" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: MicrosoftEdge=136.0.3240.50)
-Stacktrace:
-	GetHandleVerifier [0x00007FF75D8002E5+25029]
-	(No symbol) [0x00007FF75D7552F0]
-	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75DA7D73A+1947706]
-	(No symbol) [0x00007FF75D50C28F]
-	(No symbol) [0x00007FF75D59EAE0]
-	(No symbol) [0x00007FF75D5B609A]
-	(No symbol) [0x00007FF75D598DF3]
-	(No symbol) [0x00007FF75D56D6A6]
-	(No symbol) [0x00007FF75D56CBB3]
-	(No symbol) [0x00007FF75D56D4D3]
-	(No symbol) [0x00007FF75D66638D]
-	(No symbol) [0x00007FF75D673F2F]
-	(No symbol) [0x00007FF75D66C91F]
-	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75D8E76EA+284650]
-	(No symbol) [0x00007FF75D762C81]
-	(No symbol) [0x00007FF75D75B724]
-	(No symbol) [0x00007FF75D75B873]
-	(No symbol) [0x00007FF75D74D4B6]
-	BaseThreadInitThunk [0x00007FF8FB297374+20]
-	RtlUserThreadStart [0x00007FF8FBEBCC91+33]
-</msg>
-<msg time="2025-05-06T13:50:12.025795" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: MicrosoftEdge=136.0.3240.50)
-Stacktrace:
-	GetHandleVerifier [0x00007FF75D8002E5+25029]
-	(No symbol) [0x00007FF75D7552F0]
-	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75DA7D73A+1947706]
-	(No symbol) [0x00007FF75D50C28F]
-	(No symbol) [0x00007FF75D59EAE0]
-	(No symbol) [0x00007FF75D5B609A]
-	(No symbol) [0x00007FF75D598DF3]
-	(No symbol) [0x00007FF75D56D6A6]
-	(No symbol) [0x00007FF75D56CBB3]
-	(No symbol) [0x00007FF75D56D4D3]
-	(No symbol) [0x00007FF75D66638D]
-	(No symbol) [0x00007FF75D673F2F]
-	(No symbol) [0x00007FF75D66C91F]
-	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75D8E76EA+284650]
-	(No symbol) [0x00007FF75D762C81]
-	(No symbol) [0x00007FF75D75B724]
-	(No symbol) [0x00007FF75D75B873]
-	(No symbol) [0x00007FF75D74D4B6]
-	BaseThreadInitThunk [0x00007FF8FB297374+20]
-	RtlUserThreadStart [0x00007FF8FBEBCC91+33]
-</msg>
 <doc>Maximizes current browser window.</doc>
-<status status="FAIL" start="2025-05-06T13:50:11.991011" elapsed="0.041145">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: MicrosoftEdge=136.0.3240.50)
-Stacktrace:
-	GetHandleVerifier [0x00007FF75D8002E5+25029]
-	(No symbol) [0x00007FF75D7552F0]
-	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75DA7D73A+1947706]
-	(No symbol) [0x00007FF75D50C28F]
-	(No symbol) [0x00007FF75D59EAE0]
-	(No symbol) [0x00007FF75D5B609A]
-	(No symbol) [0x00007FF75D598DF3]
-	(No symbol) [0x00007FF75D56D6A6]
-	(No symbol) [0x00007FF75D56CBB3]
-	(No symbol) [0x00007FF75D56D4D3]
-	(No symbol) [0x00007FF75D66638D]
-	(No symbol) [0x00007FF75D673F2F]
-	(No symbol) [0x00007FF75D66C91F]
-	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75D8E76EA+284650]
-	(No symbol) [0x00007FF75D762C81]
-	(No symbol) [0x00007FF75D75B724]
-	(No symbol) [0x00007FF75D75B873]
-	(No symbol) [0x00007FF75D74D4B6]
-	BaseThreadInitThunk [0x00007FF8FB297374+20]
-	RtlUserThreadStart [0x00007FF8FBEBCC91+33]
-</status>
+<status status="PASS" start="2025-05-13T16:55:49.887587" elapsed="0.047891"/>
 </kw>
 <kw name="Login To System" owner="keywords">
-<status status="NOT RUN" start="2025-05-06T13:50:12.032836" elapsed="0.000080"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:55:49.938519" level="INFO">Typing text 'admingreg' into text field 'id=UserName'.</msg>
+<arg>id=UserName</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:55:49.937428" elapsed="0.179903"/>
+</kw>
+<kw name="Input Password" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:55:50.118030" level="INFO">Typing password into text field 'id=Password'.</msg>
+<msg time="2025-05-13T16:55:50.159509" level="INFO">Temporally setting log level to: NONE</msg>
+<arg>id=Password</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:55:50.117638" elapsed="0.097772"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:55:50.215797" level="INFO">Typing text 'CaptchaBypass' into text field 'id=UserCaptchaCode'.</msg>
+<arg>id=UserCaptchaCode</arg>
+<arg>${CAPTCHA_BYPASS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:55:50.215580" elapsed="0.083112"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:55:50.299194" level="INFO">Clicking button 'id=btnLogins'.</msg>
+<arg>id=btnLogins</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:55:50.298992" elapsed="0.092199"/>
+</kw>
+<status status="PASS" start="2025-05-13T16:55:49.936565" elapsed="0.454774"/>
 </kw>
 <kw name="Navigate To edit module" owner="keywords">
-<status status="NOT RUN" start="2025-05-06T13:50:12.033767" elapsed="0.000089"/>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="UserManagement"]/span/span[1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T16:55:50.392081" elapsed="6.918989"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:55:57.311635" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="UserManagement"]/span/span[1]'.</msg>
+<arg>xpath=//*[@id="UserManagement"]/span/span[1]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:55:57.311330" elapsed="0.305428"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="USER"]/span/span[1]</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T16:55:57.617006" elapsed="0.013794"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:55:57.631963" level="INFO">Simulating Mouse Over on element 'xpath=//*[@id="USER"]/span/span[1]'.</msg>
+<arg>xpath=//*[@id="USER"]/span/span[1]</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:55:57.631602" elapsed="0.303711"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//span[text()='USER ACCOUNT']</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-05-13T16:55:57.935998" elapsed="0.069830"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:55:58.006539" level="INFO">Simulating Mouse Over on element 'xpath=//span[text()='USER ACCOUNT']'.</msg>
+<arg>xpath=//span[text()='USER ACCOUNT']</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:55:58.006156" elapsed="0.294409"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:55:58.301624" level="INFO">Clicking element 'xpath=//span[text()='USER ACCOUNT']'.</msg>
+<arg>xpath=//span[text()='USER ACCOUNT']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:55:58.301067" elapsed="0.975628"/>
+</kw>
+<status status="PASS" start="2025-05-13T16:55:50.391769" elapsed="8.885108"/>
 </kw>
 <kw name="searching for account" owner="keywords">
-<status status="NOT RUN" start="2025-05-06T13:50:12.037284" elapsed="0.000116"/>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@id='txtbxsearchField']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T16:55:59.277827" elapsed="0.029958"/>
 </kw>
-<kw name="Sleep" owner="BuiltIn">
-<arg>55s</arg>
-<doc>Pauses the test executed for the given time.</doc>
-<status status="NOT RUN" start="2025-05-06T13:50:12.038167" elapsed="0.000106"/>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:55:59.308362" level="INFO">Typing text 'admin5' into text field 'xpath=//input[@id='txtbxsearchField']'.</msg>
+<arg>xpath=//input[@id='txtbxsearchField']</arg>
+<arg>${USERNAME2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:55:59.308033" elapsed="0.148611"/>
+</kw>
+<status status="PASS" start="2025-05-13T16:55:59.277314" elapsed="0.179509"/>
+</kw>
+<kw name="click search icon for edit module" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@id='searchField']</arg>
+<arg>20s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T16:55:59.457781" elapsed="0.029744"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:55:59.488059" level="INFO">Clicking element '//input[@id='searchField']'.</msg>
+<arg>//input[@id='searchField']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:55:59.487797" elapsed="0.088374"/>
+</kw>
+<status status="PASS" start="2025-05-13T16:55:59.457282" elapsed="0.119073"/>
+</kw>
+<kw name="click edit icon" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//input[@id='editModule']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T16:55:59.577253" elapsed="0.016565"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>xpath=//input[@id='editModule']</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-05-13T16:55:59.594000" elapsed="0.024745"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>xpath=//input[@id='editModule']</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2025-05-13T16:55:59.618911" elapsed="0.297454"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:55:59.918161" level="INFO">Clicking element 'xpath=//input[@id='editModule']'.</msg>
+<arg>xpath=//input[@id='editModule']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:55:59.917228" elapsed="4.258099"/>
+</kw>
+<status status="PASS" start="2025-05-13T16:55:59.576842" elapsed="4.598707"/>
+</kw>
+<kw name="edit user account" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@id='UserID' and @name='UserID' and @type='text' and @value='admin5']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T16:56:04.178563" elapsed="0.049290"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:56:04.229416" level="INFO">Typing text 'admin5' into text field '//input[@id='UserID' and @name='UserID' and @type='text' and @value='admin5']'.</msg>
+<arg>//input[@id='UserID' and @name='UserID' and @type='text' and @value='admin5']</arg>
+<arg>${USERNAME2}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:56:04.228997" elapsed="0.116409"/>
+</kw>
+<status status="PASS" start="2025-05-13T16:56:04.177615" elapsed="0.168224"/>
+</kw>
+<kw name="scroll down" owner="keywords">
+<kw name="Execute Javascript" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:56:04.346907" level="INFO">Executing JavaScript:
+window.scrollBy(0, 1000)
+Without any arguments.</msg>
+<arg>window.scrollBy(0, 1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<status status="PASS" start="2025-05-13T16:56:04.346546" elapsed="0.010067"/>
+</kw>
+<status status="PASS" start="2025-05-13T16:56:04.346237" elapsed="0.010640"/>
+</kw>
+<kw name="click save button for ACCOUNT" owner="keywords">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@id='btnSubmit']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-05-13T16:56:04.366362" elapsed="0.022145"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2025-05-13T16:56:04.389032" level="INFO">Clicking button '//input[@id='btnSubmit']'.</msg>
+<arg>//input[@id='btnSubmit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2025-05-13T16:56:04.388750" elapsed="0.095810"/>
+</kw>
+<status status="PASS" start="2025-05-13T16:56:04.365948" elapsed="0.118828"/>
 </kw>
 <kw name="Close The Browser" owner="keywords">
-<status status="NOT RUN" start="2025-05-06T13:50:12.040186" elapsed="0.000115"/>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-05-13T16:56:04.485862" elapsed="2.293593"/>
+</kw>
+<status status="PASS" start="2025-05-13T16:56:04.485419" elapsed="2.294547"/>
 </kw>
 <doc>Full workflow to create an employee in the system.</doc>
-<status status="FAIL" start="2025-05-06T13:49:24.288287" elapsed="47.752563">NoSuchWindowException: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: MicrosoftEdge=136.0.3240.50)
-Stacktrace:
-	GetHandleVerifier [0x00007FF75D8002E5+25029]
-	(No symbol) [0x00007FF75D7552F0]
-	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75DA7D73A+1947706]
-	(No symbol) [0x00007FF75D50C28F]
-	(No symbol) [0x00007FF75D59EAE0]
-	(No symbol) [0x00007FF75D5B609A]
-	(No symbol) [0x00007FF75D598DF3]
-	(No symbol) [0x00007FF75D56D6A6]
-	(No symbol) [0x00007FF75D56CBB3]
-	(No symbol) [0x00007FF75D56D4D3]
-	(No symbol) [0x00007FF75D66638D]
-	(No symbol) [0x00007FF75D673F2F]
-	(No symbol) [0x00007FF75D66C91F]
-	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75D8E76EA+284650]
-	(No symbol) [0x00007FF75D762C81]
-	(No symbol) [0x00007FF75D75B724]
-	(No symbol) [0x00007FF75D75B873]
-	(No symbol) [0x00007FF75D74D4B6]
-	BaseThreadInitThunk [0x00007FF8FB297374+20]
-	RtlUserThreadStart [0x00007FF8FBEBCC91+33]
-</status>
+<status status="PASS" start="2025-05-13T16:55:44.594099" elapsed="22.187308"/>
 </test>
-<status status="FAIL" start="2025-05-06T13:49:23.928283" elapsed="48.132235"/>
+<status status="PASS" start="2025-05-13T16:55:44.203397" elapsed="22.582282"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat name="Account Edit" id="s1" pass="0" fail="1" skip="0">Account Edit</stat>
+<stat name="Account Edit" id="s1" pass="1" fail="0" skip="0">Account Edit</stat>
 </suite>
 </statistics>
 <errors>
-<msg time="2025-05-06T13:50:12.009552" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: MicrosoftEdge=136.0.3240.50)
-Stacktrace:
-	GetHandleVerifier [0x00007FF75D8002E5+25029]
-	(No symbol) [0x00007FF75D7552F0]
-	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75DA7D73A+1947706]
-	(No symbol) [0x00007FF75D50C28F]
-	(No symbol) [0x00007FF75D59EAE0]
-	(No symbol) [0x00007FF75D5B609A]
-	(No symbol) [0x00007FF75D598DF3]
-	(No symbol) [0x00007FF75D56D6A6]
-	(No symbol) [0x00007FF75D56CBB3]
-	(No symbol) [0x00007FF75D56D4D3]
-	(No symbol) [0x00007FF75D66638D]
-	(No symbol) [0x00007FF75D673F2F]
-	(No symbol) [0x00007FF75D66C91F]
-	Microsoft::Applications::Events::EventProperty::to_string [0x00007FF75D8E76EA+284650]
-	(No symbol) [0x00007FF75D762C81]
-	(No symbol) [0x00007FF75D75B724]
-	(No symbol) [0x00007FF75D75B873]
-	(No symbol) [0x00007FF75D74D4B6]
-	BaseThreadInitThunk [0x00007FF8FB297374+20]
-	RtlUserThreadStart [0x00007FF8FBEBCC91+33]
-</msg>
 </errors>
 </robot>

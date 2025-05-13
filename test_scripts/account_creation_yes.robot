@@ -20,7 +20,4 @@ Create employee end to end test
     select role
     input UserName
     scroll down
-    
-
-    Sleep    100s
     Close The Browser
