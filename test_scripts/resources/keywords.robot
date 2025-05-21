@@ -96,6 +96,16 @@ confirm yes to delete data
    Click Button                     xpath=//button[@id='yes']
 
 
+
+*** Keywords ***
+Click Edit Confirm No
+    Wait Until Element Is Visible    xpath=//button[@id='noBTL']    20s
+    Wait Until Element Is Enabled    xpath=//button[@id='noBTL']    20s
+    Scroll Element Into View         xpath=//button[@id='noBTL']
+    Click Element                    xpath=//button[@id='noBTL']
+
+
+    
    
 editing account 
     Wait Until Element Is Visible    id=MiddleName    timeout=10s
@@ -194,19 +204,56 @@ click search icon for edit module
     Click Element                    //input[@id='searchField']
 
 click edit icon
-    Wait Until Element Is Visible   xpath=//input[@id='editModule']    timeout=10s
+    Wait Until Element Is Visible    xpath=//input[@id='editModule']    timeout=10s
     Wait Until Element Is Enabled    xpath=//input[@id='editModule']    timeout=10s
     Scroll Element Into View         xpath=//input[@id='editModule']
     Click Element                    xpath=//input[@id='editModule']
 
+
 edit user account
     Wait Until Element Is Visible    //input[@id='UserID' and @name='UserID' and @type='text' and @value='admin5']
-    Input Text    //input[@id='UserID' and @name='UserID' and @type='text' and @value='admin5']  ${USERNAME2}
+    Input Text    //input[@id='UserID' and @name='UserID' and @type='text' and @value='admin5']  ${USERNAME3}
 
 
 click save button for ACCOUNT
     Wait Until Element Is Visible    //input[@id='btnSubmit']
     Click Button    //input[@id='btnSubmit']
+
+click yes edit account
+    Wait Until Element Is Visible    //button[@id='yesBTL']
+    Click Button    //button[@id='yesBTL']
+
+edit account
+    Open Browser    ${URL}    edge
+    Maximize Browser Window
+    Login To System
+    Navigate To edit module
+    searching for account2
+    click search icon for edit module
+    click edit icon
+    edit user
+    scroll down
+    click save button for ACCOUNT
+    click yes edit account
+    Close Browser
+
+searching for account2
+    Wait Until Element Is Visible     xpath=//input[@id='txtbxsearchField']     10s
+    Input Text    xpath=//input[@id='txtbxsearchField']      ${USERNAME3}
+
+click ok to edit 
+    Wait Until Element Is Visible    //button[@id='ok']    10s
+    Click Button    //button[@id='ok']
+
+  
+
+
+edit user 
+    Wait Until Element Is Visible    //input[@id='UserID' and @name='UserID' and @value='admin999']
+    Input Text   //input[@id='UserID' and @name='UserID' and @value='admin999']   ${USERNAME2}
+
+
+
 
 create account
     Open Browser    ${URL}    edge
@@ -225,5 +272,98 @@ create account
     Close The Browser
 
 
+# Approval Workflow Submodule Module 
+navigate approvalworkflow module
+    Wait Until Page Contains Element    xpath=//*[@id="UserManagement"]/span/span[1]
+    Mouse Over                          xpath=//*[@id="UserManagement"]/span/span[1]
+    Wait Until Page Contains Element    //span[text()='USER POLICIES']    10s
+    Mouse Over                          //span[text()='USER POLICIES']
+    Wait Until Page Contains Element    //span[text()='APPROVAL WORKFLOW']    10s
+    Mouse Over                          //span[text()='APPROVAL WORKFLOW']    
+    Click Element                       //span[text()='APPROVAL WORKFLOW']
+
+click add icon approval workflow
+    Wait Until Element Is Enabled       //input[@id='btnCreate']    30s
+    Wait Until Element Is Not Visible   //div[@class='k-loading-image']    30s
+    Click Button                        //input[@id='btnCreate']
+
+name in approvalworkflow
+    Wait Until Element Is Visible       //input[@id='Name']    10s
+    Input Text                          //input[@id='Name']    test
+
+trasaction list approvalworkflow
+    Wait Until Element Is Visible       //button[@aria-label='expand combobox']    50s
+    Click Button                        //button[@aria-label='expand combobox']
+
+transaction list selection
+    Wait Until Element Is Enabled       //span[text()='5086 - WhiteList Customer']    50s 
+    Scroll Element Into View            //span[text()='5086 - WhiteList Customer']
+    Sleep                               0.5s
+    Click Element                       //span[text()='5086 - WhiteList Customer']
+    # Optional fallback:
+    # Execute JavaScript    document.evaluate("//span[text()='5086 - WhiteList Customer']", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue.click()
+
+description approvalworkflow
+    Wait Until Element Is Visible       //textarea[@id='Description']    10s
+    Input Text                          //textarea[@id='Description']    testdata for description
+
+check the selecall checkbox
+    Wait Until Element Is Visible       //input[@id='chkSelectAll']
+    Select Checkbox                     //input[@id='chkSelectAll']
+
+select tab
+    Wait Until Element Is Visible       xpath=//span[text()="Workstep Entry"]    60s
+    Click Element                       xpath=//span[text()="Workstep Entry"]
+
+add sequence
+    Wait Until Element Is Visible       xpath=//button[text()="Add New Data"]
+    Click Element                       xpath=//button[text()="Add New Data"]
+
+name sequence
+    Wait Until Element Is Visible       id=WorkstepName    10s
+    Wait Until Element Is Enabled       id=WorkstepName    10s
+    Input Text                          id=WorkstepName    Approver 1
+select role approver1
+    Wait Until Element Is Visible   id=WorkstepRoleCreateViewModels2__IsChecked
+    Wait Until Element Is Enabled    id=WorkstepRoleCreateViewModels2__IsChecked
+    Select Checkbox    id=WorkstepRoleCreateViewModels2__IsChecked
+
+description for approver1
+    Wait Until Element Is Visible    id=WorkstepDescription    10s
+    Wait Until Element Is Enabled    id=WorkstepDescription    10s
+    Input Text    id=WorkstepDescription    Approver 1
+click save awf
+    Wait Until Element Is Visible    id=Add
+    Wait Until Element Is Visible    id=Add
+
+    Click Element    id=Add
+
+click ok to confirm
+    Wait Until Element Is Visible    id=ok    10s
+    Click Element                    id=ok
+
+
+name sequence2
+    Wait Until Element Is Visible       id=WorkstepName    10s
+    Wait Until Element Is Enabled       id=WorkstepName    10s
+    Input Text                          id=WorkstepName    Approver 2
+
+description for approver2
+    Wait Until Element Is Visible    id=WorkstepDescription    50s
+    Wait Until Element Is Enabled    id=WorkstepDescription    50s
+    Input Text    id=WorkstepDescription    Approver 2
+
+
+select role approver2
+    Wait Until Element Is Visible   id=WorkstepRoleCreateViewModels3__IsChecked
+    Wait Until Element Is Enabled    id=WorkstepRoleCreateViewModels3__IsChecked
+    Select Checkbox    id=WorkstepRoleCreateViewModels3__IsChecked
+
+save icon for awf
+    Wait Until Element Is Visible    id=btnSave    10s
+    Wait Until Element Is Enabled    id=btnSave    10s
+    
+    Click Element                    id=btnSave
 Close The Browser
     Close Browser
+

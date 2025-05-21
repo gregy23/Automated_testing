@@ -6,6 +6,7 @@ Resource   resources/keywords.robot
 *** Test Cases ***
 edit account end to end test
     [Documentation]    Full workflow to create an employee in the system.
+    edit account
     Open Browser    ${URL}    edge
     Maximize Browser Window
     Login To System
@@ -16,5 +17,7 @@ edit account end to end test
     edit user account
     scroll down
     click save button for ACCOUNT
-    
+    click yes edit account
+    click ok to edit 
+
     Close The Browser

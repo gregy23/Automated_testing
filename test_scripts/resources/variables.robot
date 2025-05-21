@@ -1,6 +1,6 @@
 *** Variables ***
 ${URL}               https://sysdevintegral360dev.sscgi.com/
-${USERNAME}          admingreg
+${USERNAME}          admintesting
 ${PASSWORD}          P@ssw0rd
 ${CAPTCHA_BYPASS}    CaptchaBypass
 ${LASTNAME}          Benigno

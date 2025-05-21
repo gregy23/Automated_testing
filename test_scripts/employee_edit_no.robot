@@ -4,7 +4,7 @@ Resource   resources/variables.robot
 Resource   resources/keywords.robot
 
 *** Test Cases ***
-Create employee end to end test
+edit end to end test
     [Documentation]    Full workflow to create an employee in the system.
     
     Open Browser    ${URL}    edge
@@ -12,8 +12,9 @@ Create employee end to end test
     Login To System
     Navigate To Employee Management
     searching data
-    navigate edit page
-    editing account
+    click edit icon
+    scroll down
     CLICKING SAVE BUTTON FOR EMPLOYEE
-    CLICKING FOR CONFIRMATION TO no
+    click edit confirm no
+    
     Close The Browser
